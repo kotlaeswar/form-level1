@@ -43,6 +43,7 @@ export default function Form() {
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
       errors.email = 'Email must be a valid email address';
     }
+    
     if (!values.age) {
       errors.age = 'Age is required';
     } else if (values.age <= 0) {
