@@ -8,7 +8,7 @@ export default function Form() {
     name: '',
     email: '',
     age: '',
-    attendingWithGuest: 'no0',
+    attendingWithGuest: 'no',
     guestName: '',
   });
   const [errors, setErrors] = useState({});
