@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Form.css';
 
-
 export default function Form() {
   const [values, setValues] = useState({
     name: '',
@@ -43,7 +42,6 @@ export default function Form() {
     } else if (!/^\S+@\S+\.\S+$/.test(values.email)) {
       errors.email = 'Email must be a valid email address';
     }
-    
     if (!values.age) {
       errors.age = 'Age is required';
     } else if (values.age <= 0) {
@@ -75,7 +73,7 @@ export default function Form() {
           name="name"
           value={values.name}
           onChange={handleChange}
-         
+       
         />
         {errors.name && <p className="error">{errors.name}</p>}
       </div>
@@ -86,8 +84,8 @@ export default function Form() {
           name="email"
           value={values.email}
           onChange={handleChange}
-       
-          pattern=".+@gmail\.com"
+          required
+          pattern="^\S+@\S+\.\S+$"
         />
         {errors.email && <p className="error">{errors.email}</p>}
       </div>
@@ -98,7 +96,6 @@ export default function Form() {
           name="age"
           value={values.age}
           onChange={handleChange}
-          required
           min="1"
         />
         {errors.age && <p className="error">{errors.age}</p>}
@@ -113,7 +110,6 @@ export default function Form() {
               value="yes"
               checked={values.attendingWithGuest === 'yes'}
               onChange={handleChange}
-             
             />
             Yes
           </label>
@@ -124,7 +120,6 @@ export default function Form() {
               value="no"
               checked={values.attendingWithGuest === 'no'}
               onChange={handleChange}
-            
             />
             No
           </label>
@@ -138,7 +133,7 @@ export default function Form() {
             name="guestName"
             value={values.guestName}
             onChange={handleChange}
-            required
+        
           />
           {errors.guestName && <p className="error">{errors.guestName}</p>}
         </div>
@@ -147,4 +142,3 @@ export default function Form() {
     </form>
   );
 }
-
