@@ -40,8 +40,8 @@ export default function Form() {
     }
     if (!values.email) {
       errors.email = 'Email is required';
-    } else if (!values.email.endsWith('@gmail.com')) {
-      errors.email = 'Email must end with @gmail.com';
+    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+      errors.email = 'Email must be a valid email address';
     }
     if (!values.age) {
       errors.age = 'Age is required';
@@ -74,7 +74,7 @@ export default function Form() {
           name="name"
           value={values.name}
           onChange={handleChange}
-          required
+         
         />
         {errors.name && <p className="error">{errors.name}</p>}
       </div>
@@ -85,7 +85,7 @@ export default function Form() {
           name="email"
           value={values.email}
           onChange={handleChange}
-          required
+       
           pattern=".+@gmail\.com"
         />
         {errors.email && <p className="error">{errors.email}</p>}
@@ -112,7 +112,7 @@ export default function Form() {
               value="yes"
               checked={values.attendingWithGuest === 'yes'}
               onChange={handleChange}
-              required
+             
             />
             Yes
           </label>
@@ -123,7 +123,7 @@ export default function Form() {
               value="no"
               checked={values.attendingWithGuest === 'no'}
               onChange={handleChange}
-              required
+            
             />
             No
           </label>
