@@ -40,7 +40,7 @@ export default function Form() {
     }
     if (!values.email) {
       errors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+    } else if (!/^\S+@\S+\.\S+$/.test(values.email)) {
       errors.email = 'Email must be a valid email address';
     }
     
