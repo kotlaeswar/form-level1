@@ -1,10 +1,8 @@
 import React from 'react';
-import { useLocation, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import './Form.css';
-function Summary() {
-  const location = useLocation();
-  const formData = location.state?.formData;
 
+function Summary({ formData }) {
   if (!formData) {
     return <Navigate to="/" />;
   }

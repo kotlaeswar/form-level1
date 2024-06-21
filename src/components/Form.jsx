@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Form.css';
 
-export default function Form() {
+export default function Form({ setFormData }) {
   const [values, setValues] = useState({
     name: '',
     email: '',
@@ -25,7 +25,8 @@ export default function Form() {
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length === 0) {
-      navigate('/summary', { state: { formData: values } });
+      setFormData(values);
+      navigate('/summary');
       resetForm();
     } else {
       setErrors(validationErrors);
@@ -73,7 +74,6 @@ export default function Form() {
           name="name"
           value={values.name}
           onChange={handleChange}
-       
         />
         {errors.name && <p className="error">{errors.name}</p>}
       </div>
@@ -132,7 +132,6 @@ export default function Form() {
             name="guestName"
             value={values.guestName}
             onChange={handleChange}
-        
           />
           {errors.guestName && <p className="error">{errors.guestName}</p>}
         </div>

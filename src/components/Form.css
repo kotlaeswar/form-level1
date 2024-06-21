@@ -1,5 +1,130 @@
-body{
+body {
   background-color: dimgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.form {
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: honeydew;
+  box-shadow: 0px 0px 40px 1px rgba(0, 255, 117, 0.50);
+}
+
+.form div {
+  margin-bottom: 15px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="number"],
+.form input[type="radio"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 9999px;
+  padding: 10px 20px;
+}
+
+.form .error {
+  color: red;
+  font-size: 12px;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+  background-color: #00bfff;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #212121;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+button:hover {
+  color: #e8e8e8;
+}
+
+button:hover::before {
+  width: 100%;
+}
+
+button {
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+}
+
+.form button {
+  padding: 10px 15px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.summary {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 40px 1px rgba(0, 255, 117, 0.50);
+}
+
+.summary h2 {
+  margin-bottom: 20px;
+}
+
+.summary p {
+  margin-bottom: 10px;
+}
+/* body{
+  background-color: dimgray;
+  display: flex;
+ 
+  
+  height: 100vh;
+
+
+
 }
 
 .form {
@@ -9,6 +134,8 @@ body{
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: honeydew;
+
+   
   }
   .form:hover {
     box-shadow: 0px 0px 40px 1px rgba(0, 255, 117, 0.50);
@@ -16,6 +143,7 @@ body{
   
   .form div {
     margin-bottom: 15px;
+   
   }
   
   .form label {
@@ -116,4 +244,4 @@ button {
   .summary p {
     margin-bottom: 10px;
   }
-  
+   */
