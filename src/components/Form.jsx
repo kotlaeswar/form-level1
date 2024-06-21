@@ -84,7 +84,6 @@ export default function Form() {
           name="email"
           value={values.email}
           onChange={handleChange}
-          required
           pattern="^\S+@\S+\.\S+$"
         />
         {errors.email && <p className="error">{errors.email}</p>}
@@ -138,7 +137,7 @@ export default function Form() {
           {errors.guestName && <p className="error">{errors.guestName}</p>}
         </div>
       )}
-      <button type="submit">Submit</button>
+      <center><button type="submit">Submit</button></center>
     </form>
   );
 }
